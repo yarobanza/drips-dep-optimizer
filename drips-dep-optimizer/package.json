@@ -1,0 +1,47 @@
+{
+  "name": "drips-dep-optimizer",
+  "version": "0.1.0",
+  "description": "CLI that resolves a project's dependency tree, cross-references it against Drips Network's public funding data, and generates a suggested Drips split configuration.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "drips-dep-optimizer": "./dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "tsx src/cli.ts",
+    "dev": "tsx watch src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "drips",
+    "drips-network",
+    "open-source-funding",
+    "dependency-tree",
+    "package.json",
+    "cargo",
+    "splits",
+    "cli"
+  ],
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "commander": "^12.1.0",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
